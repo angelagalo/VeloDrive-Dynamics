@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VelocityVision AI | Smart Vehicle Classifier</title>
+    <!-- Tailwind CSS CDN for rapid, modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#090d16',
+                        cardBg: '#111827',
+                        accentCyan: '#06b6d4',
+                        accentAmber: '#f59e0b',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Outfit & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #090d16; color: #f3f4f6; }
+        h1, h2, h3, .font-heading { font-family: 'Outfit', sans-serif; }
+        .glow-effect { box-shadow: 0 0 40px -10px rgba(6, 182, 212, 0.15); }
+    </style>
+</head>
+<body class="bg-darkBg min-h-screen flex flex-col selection:bg-accentCyan selection:text-black">
+
+    <!-- NAVIGATION -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-darkBg/80 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-accentCyan to-blue-600 flex items-center justify-center font-heading font-extrabold text-xl text-black shadow-lg shadow-cyan-500/20">
+                    V
+                </div>
+                <span class="font-heading font-bold text-xl tracking-wide text-white">Velocity<span class="text-accentCyan">Vision</span></span>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
+                <a href="#classifier" class="hover:text-accentCyan transition-colors">AI Model</a>
+                <a href="#community" class="hover:text-accentCyan transition-colors">Community Impact</a>
+                <a href="#about" class="hover:text-accentCyan transition-colors">About</a>
+            </nav>
+            <a href="#classifier" class="px-5 py-2.5 rounded-xl bg-accentCyan text-black font-semibold text-sm hover:bg-cyan-400 transition-all shadow-lg shadow-cyan-500/10">
+                Launch Classifier
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden pt-20 pb-32 px-6">
+        <div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-900 via-transparent to-transparent"></div>
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-accentCyan text-xs font-semibold uppercase tracking-wider mb-6">
+                <span class="w-2 h-2 rounded-full bg-accentCyan animate-ping"></span>
+                <span>Powered by Google Teachable Machine</span>
+            </div>
+            <h1 class="font-heading text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                Instant AI Classification for <span class="text-transparent bg-clip-text bg-gradient-to-r from-accentCyan to-blue-400">Bikes, Superbikes & Cars</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 font-light">
+                Experience cutting-edge computer vision built for automotive enthusiasts. Instantly identify and categorize high-performance vehicles with machine learning.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#classifier" class="px-8 py-4 rounded-xl bg-gradient-to-r from-accentCyan to-blue-500 text-black font-heading font-bold text-base hover:opacity-90 transition-all shadow-xl shadow-cyan-500/20">
+                    Try the Model Now
+                </a>
+                <a href="#community" class="px-8 py-4 rounded-xl bg-cardBg border border-gray-800 text-white font-heading font-medium text-base hover:bg-gray-800 transition-all">
+                    Explore Impact
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE TEACHABLE MACHINE SECTION -->
+    <section id="classifier" class="py-20 px-6 bg-cardBg/40 border-y border-gray-800/80">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-3">Live AI Vehicle Classifier</h2>
+                <p class="text-gray-400 text-sm md:text-base">Test your model directly below using your webcam or uploaded vehicle photos.</p>
+            </div>
+            
+            <!-- MODEL CONTAINER CARD -->
+            <div class="bg-cardBg rounded-2xl border border-gray-800 p-6 md:p-10 glow-effect text-center flex flex-col items-center justify-center min-h-[400px]">
+                
+                <!-- INTEGRATED TEACHABLE MACHINE EMBED/IFRAME -->
+                <div class="w-full flex flex-col items-center justify-center space-y-6">
+                    <div class="p-4 bg-darkBg rounded-xl border border-gray-800 text-center w-full max-w-xl">
+                        <p class="text-sm text-gray-300 mb-4 font-medium">Click below to load and run your Teachable Machine project:</p>
+                        <a href="https://teachablemachine.withgoogle.com/models/e3OONks_S/" target="_blank" rel="noopener noreferrer" 
+                           class="inline-flex items-center justify-center w-full px-6 py-3 bg-accentCyan text-black font-heading font-semibold rounded-lg hover:bg-cyan-400 transition-all shadow-md">
+                            Open Full Model Workspace ↗
+                        </a>
+                    </div>
+                    
+                    <!-- Optional: Embedded iframe view if supported by TM -->
+                    <div class="w-full aspect-video rounded-xl overflow-hidden border border-gray-800 bg-black flex items-center justify-center relative">
+                        <iframe src="https://teachablemachine.withgoogle.com/models/e3OONks_S/" title="Teachable Machine Model" class="w-full h-full border-0"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SIGNIFICANCE TO THE COMMUNITY SECTION -->
+    <section id="community" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">Significance to the Community</h2>
+            <p class="text-gray-400">Why a lightweight, accessible automotive classification tool matters for hobbyists, educators, and smart cities.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-cardBg p-8 rounded-2xl border border-gray-800 hover:border-accentCyan/50 transition-all group">
+                <div class="w-12 h-12 rounded-xl bg-cyan-950 text-accentCyan flex items-center justify-center font-bold text-xl mb-6 group-hover:scale-110 transition-transform">
+                    01
+                </div>
+                <h3 class="font-heading text-xl font-bold text-white mb-3">Automotive Education & AI Literacy</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Bridges the gap between machine learning and mechanical passion, empowering students and hobbyists to understand computer vision through everyday objects like superbikes and sports cars.
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-cardBg p-8 rounded-2xl border border-gray-800 hover:border-accentCyan/50 transition-all group">
+                <div class="w-12 h-12 rounded-xl bg-amber-950 text-accentAmber flex items-center justify-center font-bold text-xl mb-6 group-hover:scale-110 transition-transform">
+                    02
+                </div>
+                <h3 class="font-heading text-xl font-bold text-white mb-3">Smart Traffic & Enthusiast Analytics</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Lays the groundwork for lightweight edge-computing applications, helping local communities track vehicle distribution, monitor meetup flows, and analyze vehicle categories efficiently.
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-cardBg p-8 rounded-2xl border border-gray-800 hover:border-accentCyan/50 transition-all group">
+                <div class="w-12 h-12 rounded-xl bg-blue-950 text-blue-400 flex items-center justify-center font-bold text-xl mb-6 group-hover:scale-110 transition-transform">
+                    03
+                </div>
